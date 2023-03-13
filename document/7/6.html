@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div id="timer"></div>
+    <button id="stop" onclick="stopTimer()">stop</button>
+    <button id="start" onclick="startTimer()">start</button>
+
+    <script>
+    
+        let timer = document.getElementById('timer');
+        let timerId;
+
+        function updateTimer() {
+            timer.innerText = new Date().toLocaleTimeString()
+        }
+        
+        function stopTimer() {
+            clearInterval(timerId);
+            timerId = null;
+        }
+        function startTimer() {
+            if(!timerId) {
+                timerId = setInterval(updateTimer, 1000);
+            }
+            updateTimer()
+        }
+        
+        
+    </script>
+</body>
+</html>

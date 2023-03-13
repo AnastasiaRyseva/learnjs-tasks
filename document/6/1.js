@@ -1,0 +1,1 @@
+console.log(document.body.firstElementChild.getAttribute('data-widget-name'))

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  margin: 10px auto;
+  width: 470px;
+}
+
+h3 {
+  margin: 0;
+  padding-bottom: .3em;
+  font-size: 1.1em;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 .5em;
+}
+
+.pane {
+  background: #edf5e1;
+  padding: 10px 20px 10px;
+  border-top: solid 2px #c4df9b;
+  position: relative;
+}
+
+.remove-button {
+  font-size: 110%;
+  color: darkred;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.group {
+    cursor: pointer;
+}
+.show {
+    display: none;
+}
+</style>
+<body>
+    <ul class="tree" id="tree">
+        <li class="group">Животные
+          <ul>
+            <li class="group">Млекопитающие
+              <ul>
+                <li>Коровы</li>
+                <li>Ослы</li>
+                <li>Собаки</li>
+                <li>Тигры</li>
+              </ul>
+            </li>
+            <li class="group">Другие
+              <ul>
+                <li>Змеи</li>
+                <li>Птицы</li>
+                <li>Ящерицы</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="group">Рыбы
+          <ul>
+            <li class="group">Аквариумные
+              <ul>
+                <li>Гуппи</li>
+                <li>Скалярии</li>
+              </ul>
+            </li>
+            <li class="group">Морские
+              <ul>
+                <li>Морская форель</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <script>
+            const listTree = document.getElementById('tree');
+
+            listTree.addEventListener('click', showChild)
+
+            function showChild(e) {
+                if(!e.target.className == 'group') return
+
+                e.target.querySelector('ul').classList.toggle('show');
+            }
+
+      </script>
+</body>
+</html>
